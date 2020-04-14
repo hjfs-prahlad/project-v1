@@ -5,8 +5,8 @@
 - Ng serve
 - Sanjay Singhania
 - Baba 
-- Baburao
-- Quotes
+- Badmash Porga Baburao
+- Avgadh Quotes
 
 ----
 Module : 1
