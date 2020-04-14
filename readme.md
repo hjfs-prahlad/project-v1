@@ -1,12 +1,12 @@
 > Welcome to Course Management System
 
-#Team :
-- Holambe
-- Ng serve
-- Sanjay Singhania
-- Baba 
-- Badmash Porga Baburao
-- Avgadh Quotes
+Team :
+- Pooja
+- Nilam
+- Sonu
+- Aditya
+- Akshay
+- Prahlad
 
 ----
 Module : 1
