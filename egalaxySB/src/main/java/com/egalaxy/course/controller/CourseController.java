@@ -19,46 +19,48 @@ import com.egalaxy.course.service.CourseService;
 import com.egalaxy.course.service.CourseServiceImpl;
 
 
-@CrossOrigin(value = "/")
+@CrossOrigin(origins = "http://localhost:4200")
+
 @RestController
-@RequestMapping(value = "/course")
+@RequestMapping(value = "/api")
 public class CourseController {
 
 	@Autowired
 	CourseService courseService;
 	
-   @RequestMapping(value = "/all", method = RequestMethod.GET )
+   @RequestMapping(value = "/courses", method = RequestMethod.GET )
 	   public List<Course> getallCourses(){
-		   return this.courseService.getallCourses();
+		   return this.courseService.getAllCourses();
 	   }
    
-   @RequestMapping(value = "/create", method = RequestMethod.POST,
+   @RequestMapping(value = "/courses", method = RequestMethod.POST,
 		   consumes = MediaType.APPLICATION_JSON_VALUE,
-		   produces = MediaType.APPLICATION_JSON_VALUE )
+		   produces = MediaType.APPLICATION_JSON_VALUE ) 
 	public Course createCourse(@RequestBody Course course) {
 		return this.courseService.createCourse(course);
 	}
    
-   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+   @RequestMapping(value = "/courses/{id}", method = RequestMethod.GET)
    public Optional<Course> getCourseById(@PathVariable long id){
 	   return courseService.getCourseById(id);
    }
    
-   @RequestMapping(value = "/update", method = RequestMethod.PUT,
+   @RequestMapping(value = "/courses/{id}", method = RequestMethod.PUT,
 		   consumes = MediaType.APPLICATION_JSON_VALUE,
 		   produces = MediaType.APPLICATION_JSON_VALUE)
    public Course updateCourse(@RequestBody Course course) {
 	   return this.updateCourse(course);
    }
    
-   @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-   public void deleteCoursebyId(long id) {
-	   this.courseService.deleteCoursebyId(id);
+   @RequestMapping(value = "/courses/{id}", method = RequestMethod.DELETE)
+   public void deleteCourseById(@PathVariable long id) {
+	   this.courseService.deleteCourseById(id);
    }
    
-   @RequestMapping(value = "/deleteall", method = RequestMethod.DELETE)
-   public void deleteallCourses() {
-   this.courseService.deleteallCourses();
-   
-}
+	/*
+	 * @RequestMapping(value = "/deleteall", method = RequestMethod.DELETE) public
+	 * void deleteallCourses() { this.courseService.deleteallCourses();
+	 * 
+	 * }
+	 */
 }

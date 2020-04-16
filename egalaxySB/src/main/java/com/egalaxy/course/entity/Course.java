@@ -16,7 +16,7 @@ public class Course {
 	@Id
 	@Column(name = "COURSE_ID")
 	@GeneratedValue (strategy = GenerationType.AUTO)
-	private  Long id;
+	private  long courseid;
 
 	@Column(name = "COURSE_NAME", nullable = false )
 	private String courseName;
@@ -38,25 +38,14 @@ public class Course {
 
 
 
-	public Course(Long id, String courseName, String courseDescription, String courseAuthor, int coursePrice) {
-		super();
-		this.id = id;
-		this.courseName = courseName;
-		this.courseDescription = courseDescription;
-		this.courseAuthor = courseAuthor;
-		this.coursePrice = coursePrice;
+	public Long getCourseid() {
+		return courseid;
 	}
 
 
 
-	public Long getId() {
-		return id;
-	}
-
-
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setCourseid(Long courseid) {
+		this.courseid = courseid;
 	}
 
 
@@ -109,11 +98,23 @@ public class Course {
 
 
 
+	public Course(Long courseid, String courseName, String courseDescription, String courseAuthor, int coursePrice) {
+		super();
+		this.courseid = courseid;
+		this.courseName = courseName;
+		this.courseDescription = courseDescription;
+		this.courseAuthor = courseAuthor;
+		this.coursePrice = coursePrice;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "Course [id=" + id + ", courseName=" + courseName + ", courseDescription=" + courseDescription
-				+ ", courseAuthor=" + courseAuthor + ", coursePrice=" + coursePrice + "]";
+		return "Course [courseid=" + courseid + ", courseName=" + courseName + ", courseDescription="
+				+ courseDescription + ", courseAuthor=" + courseAuthor + ", coursePrice=" + coursePrice + "]";
 	}
+
 
 
 	

@@ -10,7 +10,7 @@ import com.egalaxy.course.entity.Course;
 
 public interface CourseService {
 
-	List<Course> getallCourses();
+	List<Course> getAllCourses();
 	
 	Optional<Course> getCourseById(long id);
 	
@@ -18,8 +18,8 @@ public interface CourseService {
 	
 	Course updateCourse(Course course);
 	
-	void deleteCoursebyId(long id);
+	void deleteCourseById(Long id);
 	
-	void deleteallCourses();
+	/* void deleteallCourses(); */
 	
 }

@@ -21,7 +21,7 @@ public class CourseServiceImpl implements CourseService{
 	
 	@Override
 	@Transactional
-	public List<Course> getallCourses() {
+	public List<Course> getAllCourses() {
 		
 		return courseRepository.findAll();
 	}
@@ -46,14 +46,15 @@ public class CourseServiceImpl implements CourseService{
 		return courseRepository.save(course);
 	}
 	@Override
-	public void  deleteCoursebyId(long id) {
+	public void  deleteCourseById(Long id) {
 		courseRepository.deleteById(id);
 	}
 	
-	@Override
-	@Transactional
-	public void deleteallCourses() {
-		courseRepository.deleteAll();
-		
-	}
+	/*
+	 * @Override
+	 * 
+	 * @Transactional public void deleteallCourses() { courseRepository.deleteAll();
+	 * 
+	 * }
+	 */
 }
