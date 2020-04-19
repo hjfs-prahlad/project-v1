@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
   })
 export class CourseService
 {
-    private url = 'http://localhost:9090/eGalaxy/api/courses';
+    private url = 'http://localhost:9999/eGalaxy/api/courses';
 
     constructor(private http : HttpClient)
     {
